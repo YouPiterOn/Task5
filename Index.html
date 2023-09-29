@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="Styles/Style1.css" />
+    <script src="Scripts/Bookshelf.js" defer></script>
+    <title></title>
+</head>
+<body style="display:flex;">
+    <div id="shelf">
+        <div name="bookOrigin" style="display: none;" id="bookparent">
+            <p name="title">Title: </p>
+            <p name="authors">Authors: </p>
+            <p name="numberOfPages">Number of pages: </p>
+            <p name="isRead">Is read: </p>
+            <p name="isFavorite">Is favorite: </p><br />
+        </div>
+    </div>
+    <form name="myForm" action="" method="GET" style="display:flex; flex-direction:column">
+        <label>Title</label>
+        <input type="text" name="title" value="">
+        <label>Authors</label>
+        <input type="text" name="authors" value="">
+        <label>Number of pages</label>
+        <input type="text" name="numberOfPages" value="">
+        <label>
+            Is read<input type="checkbox" name="isRead" value="Is read">
+        </label>
+        <label>
+            Is favorite<input type="checkbox" name="isFavorite" value="Is favorite">
+        </label>
+        <input type="button" name="button" value="Add book" onClick="shelf.addBook(new Book(this.form.title.value, this.form.authors.value, this.form.numberOfPages.value, this.form.isRead.checked, this.form.isFavorite.checked))">
+    </form>
+</body>
+</html>
